@@ -17,3 +17,26 @@ class MachineTrainerTestCase(TestCase):
         machine_trainer.train_machine()
         self.assertTrue(machine_trainer.is_trained)
 
+    @patch('predictor.machine_trainer.MachineTrainer._retrieve_data_set')
+    @patch('predictor.machine_trainer.MachineTrainer._fit_data')
+    def test_data_retrieval_method_should_be_called_when_train_machine_called(self,
+                                                                       mock_fit,
+                                                                       mock_dataset):
+        """Метод _retrieve_data_set должен быть вызван, если вызван
+        метод train_machine"""
+        machine_trainer = MachineTrainer()
+        machine_trainer.train_machine()
+        mock_dataset.assert_called_once()
+
+    @patch('predictor.machine_trainer.MachineTrainer._retrieve_data_set')
+    @patch('predictor.machine_trainer.MachineTrainer._fit_data')
+    def test_fit_data_method_should_be_called_when_train_machine_called(self,
+                                                                        mock_fit,
+                                                                        mock_dataset):
+        """Метод _retrieve_data_set должен быть вызван, если вызван
+        метод train_machine"""
+        machine_trainer = MachineTrainer()
+        machine_trainer.train_machine()
+        mock_fit.assert_called_once()
+
+
