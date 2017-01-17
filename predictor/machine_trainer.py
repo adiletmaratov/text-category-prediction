@@ -33,7 +33,7 @@ class MachineTrainer(object):
     def is_trained(self):
         return self._is_trained
 
-    def train_machine(self):
+    def train(self):
         self._retrieve_data_set()
         self._fit_data()
         self._is_trained = True

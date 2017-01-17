@@ -6,7 +6,7 @@ class CategoryPredictor(object):
         self._machine_trainer = MachineTrainer()
 
     def train_machine(self):
-        self._machine_trainer.train_machine()
+        self._machine_trainer.train()
 
     def predict_category(self, user_input):
         user_input = [user_input]
