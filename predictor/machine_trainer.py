@@ -8,7 +8,6 @@ from sklearn.pipeline import Pipeline
 class MachineTrainer(object):
     def __init__(self):
         self._classifier = self._construct_classifier()
-        self._is_trained = False
         self._data_set = None
 
     @staticmethod
@@ -29,14 +28,9 @@ class MachineTrainer(object):
     def data_set(self):
         return self._data_set
 
-    @property
-    def is_trained(self):
-        return self._is_trained
-
     def train(self):
         self._retrieve_data_set()
         self._fit_data()
-        self._is_trained = True
 
     def _fit_data(self):
         self._classifier.fit(self._data_set.data, self._data_set.target)
