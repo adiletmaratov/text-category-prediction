@@ -21,5 +21,10 @@ class MachineTrainer(object):
                            random_state=42)),
         ])
 
+    def train_machine(self):
+        self._retrieve_data_set()
+        self._classifier.fit(self._data_set.data, self._data_set.target)
+        self.is_trained = True
+
     def _retrieve_data_set(self):
         self._data_set = fetch_20newsgroups(subset='train', shuffle=True)
