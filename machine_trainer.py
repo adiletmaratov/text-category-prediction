@@ -20,3 +20,6 @@ class MachineTrainer(object):
              SGDClassifier(loss='hinge', penalty='l2', alpha=1e-3, n_iter=5,
                            random_state=42)),
         ])
+
+    def _retrieve_data_set(self):
+        self._data_set = fetch_20newsgroups(subset='train', shuffle=True)
