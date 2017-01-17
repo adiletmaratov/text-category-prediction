@@ -23,7 +23,7 @@ class MachineTrainerTestCase(TestCase):
     def test_fit_data_method_should_be_called_when_train_machine_called(self,
                                                                         mock_fit,
                                                                         mock_dataset):
-        """Метод _retrieve_data_set должен быть вызван, если вызван
+        """Метод _fit_data должен быть вызван, если вызван
         метод train"""
         machine_trainer = MachineTrainer()
         machine_trainer.train()
