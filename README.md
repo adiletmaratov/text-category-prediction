@@ -4,14 +4,13 @@
  * Установка системных зависимостей
  
  ```
- sudo apt-get install python3 virtualenv
+ sudo apt-get install python virtualenv
  ```
  
  * Далее нужно создать виртуальное окружение
  ```
  virtualenv text_analytics
  ``` 
- укажите версию python соответствующую вашей.
 
  * Теперь активируем виртуальное окружение
  
@@ -28,7 +27,7 @@
 ```
  python
 ```
- Номер версии python в консоли должен быть больше или равен 3
+ Номер версии python в консоли должен быть 2.7
  
  
 ## Использование классификатора текста
@@ -48,6 +47,9 @@ mt = MachineTrainer()  # создание экземпляра класса дл
 mt.train()    # обучение
 cp = CategoryPredictor(mt)    #   создание экземпляра
 cp.predict("god probably lives somewere in the heaven")    # определение категории предложения
+
+# >>> god probably lives somewere in the heaven => soc.religion.christian
 ```
+
 
 
