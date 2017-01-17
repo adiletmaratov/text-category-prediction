@@ -21,6 +21,14 @@ class MachineTrainer(object):
                            random_state=42)),
         ])
 
+    @property
+    def classifier(self):
+        return self._classifier
+
+    @property
+    def data_set(self):
+        return self._data_set
+
     def train_machine(self):
         self._retrieve_data_set()
         self._classifier.fit(self._data_set.data, self._data_set.target)
