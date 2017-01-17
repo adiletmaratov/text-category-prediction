@@ -8,7 +8,7 @@ class CategoryPredictor(object):
     def train_machine(self):
         self._machine_trainer.train()
 
-    def predict_category(self, user_input):
+    def predict(self, user_input):
         user_input = [user_input]
         predicted = self._machine_trainer.classifier.predict(user_input)
         self._print_results(user_input, predicted)
