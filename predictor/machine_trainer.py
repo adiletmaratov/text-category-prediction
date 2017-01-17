@@ -1,3 +1,4 @@
+# coding=utf-8
 from sklearn.datasets import fetch_20newsgroups
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
@@ -6,6 +7,11 @@ from sklearn.pipeline import Pipeline
 
 
 class MachineTrainer(object):
+    """
+    Класс, обучающий машину с данными из
+    http://qwone.com/~jason/20Newsgroups/
+    Алгоритм обучения: SGDClassifier
+    """
     def __init__(self):
         self._classifier = self._construct_classifier()
         self._data_set = None
