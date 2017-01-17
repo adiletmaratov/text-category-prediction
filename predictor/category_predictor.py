@@ -1,4 +1,4 @@
-from machine_trainer import MachineTrainer
+from .machine_trainer import MachineTrainer
 
 
 class CategoryPredictor(object):
